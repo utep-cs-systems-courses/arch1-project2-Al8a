@@ -16,13 +16,13 @@ int main(void) {
 
 
 int secondCount = 0;            /* global state var to count time */
-int led_swap = 0;               /* swap between red and green */
+int led_swap = 0;               /* swap between red(1) and green(1) LEDS */
 
 void
 __interrupt_vec(WDT_VECTOR) WDT()	/* 250 interrupts/sec */
 {
   secondCount ++;
-  if (secondCount <= 32 && led_swap == 0) { 	    /* once each sec... */
+  if (secondCount <= 32 && led_swap == 0) { 	  /* once each sec... */
     P1OUT ^= LED_GREEN;		                      /* toggle green LED */
     led_swap = 1;               
   }
@@ -30,30 +30,30 @@ __interrupt_vec(WDT_VECTOR) WDT()	/* 250 interrupts/sec */
     P1OUT ^= LED_RED;                           /* Toggle red LED  */
     led_swap = 0;               
   }
-  else if (secondCount <= 63 && led_swap == 0) { /* once each sec... */
-    P1OUT ^= LED_GREEN;		                      /* toggle green LED */
+  else if (secondCount <= 63 && led_swap == 0) { 
+    P1OUT ^= LED_GREEN;		                    
     led_swap = 1;               
   }
   else if (secondCount <= 63 && led_swap == 1){
-    P1OUT ^= LED_RED;                           /* Toggle red LED  */
+    P1OUT ^= LED_RED;                          
     led_swap = 0;               
   }
-  else if (secondCount < 125 && led_swap == 0) {/* once each sec... */
-    P1OUT ^= LED_GREEN;		                      /* toggle green LED */
+  else if (secondCount < 125 && led_swap == 0) {
+    P1OUT ^= LED_GREEN;		                      
     led_swap = 1;               
   }
   else if (secondCount < 125 && led_swap == 1){
-    P1OUT ^= LED_RED;                           /* Toggle red LED  */
+    P1OUT ^= LED_RED;                          
     led_swap = 0;               
   }       
-  else if(secondCount >= 250 && led_swap == 0) {/* once each sec... */
+  else if(secondCount >= 250 && led_swap == 0) {
     secondCount = 0;		                        /* reset count */
-    P1OUT ^= LED_GREEN;		                      /* toggle green LED */
+    P1OUT ^= LED_GREEN;		                      
     led_swap = 1;               
   }
   else if (secondCount >= 250 && led_swap == 1){
     secondCount = 0;
-    P1OUT ^= LED_RED;                           /* Toggle red LED */
+    P1OUT ^= LED_RED;                           
     led_swap = 0;               
   }
 } 
