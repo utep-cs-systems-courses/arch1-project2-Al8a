@@ -15,8 +15,6 @@ int main(void) {
 
 static int secondCount = 0;
 static int tickCount= 0;
-int secondLimit = 4;
-
 
 void 
 __interrupt_vec(WDT_VECTOR) WDT ()
