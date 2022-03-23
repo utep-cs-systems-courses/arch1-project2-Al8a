@@ -21,7 +21,7 @@ void led_update()
 
 void red_on(int on)
 {
-  if (on){
+  if(on){
     P1OUT |= LED_RED;
   }else
     P1OUT &= ~LED_RED;
@@ -63,4 +63,3 @@ void swap_leds(int on)
     break;
   }
 }
-

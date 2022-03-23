@@ -1,9 +1,8 @@
-#include <msp430.h>
+#include <msp430.h>AA
 #include "led.h"
 #include "buzzer.h"
 #include "state_machines.h"
 #include "switches.h"
-
 
 
 
@@ -56,19 +55,19 @@ void switch_interrupt_handler()
   sw4_status = (p2val & SW4) ? 0 : 1;
 
   // Switch Selection and reset
-  if (prev1 != sw1_status && sw1_status){
+  if(prev1 != sw1_status && sw1_status){
     sw1_press_state ^= 1;
     sw2_press_state = 0;
     sw3_press_state = 0; 
     sw4_press_state = 0;
   }
-  else if (prev2 != sw2_status && sw2_status){
+  else if(prev2 != sw2_status && sw2_status){
     sw2_press_state ^= 1;
     sw1_press_state = 0; 
     sw3_press_state = 0;
     sw4_press_state = 0;
   }
-  else if (prev3 != sw3_status && sw3_status){
+  else if(prev3 != sw3_status && sw3_status){
     sw3_press_state ^= 1;
     sw1_press_state = 0; 
     sw2_press_state = 0;

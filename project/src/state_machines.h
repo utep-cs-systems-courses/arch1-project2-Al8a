@@ -6,6 +6,7 @@
 void play_song_1();
 void play_song_2();
 void play_song_3();
+void play_song_4();
 
 void red_dim_25();
 void red_dim_50();
