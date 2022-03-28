@@ -1,3 +1,4 @@
+#include <msp430.h>
 #include "led.h"
 #include "state_machines.h"
 
@@ -22,6 +23,7 @@ void dim_sequence()
     dim_state = 0;
     break;
   default:
+    dim_state = 0;
     break;
   }
 }

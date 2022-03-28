@@ -4,7 +4,7 @@
 #include "switches.h"
 #include "buzzer.h"
 
-
+int sw0_press_state = 0;
 int sw1_press_state = 0;
 int sw2_press_state = 0;
 int sw3_press_state = 0;
@@ -21,7 +21,7 @@ void __interrupt_vec(WDT_VECTOR) WDT ()                    // 250 interrupts/sec
     play_song_1();
     count = 0;
   }
-  else if((count % 62) == 0 && sw2_press_state == 1){     // SWITCH 2  
+  else if((count % 63) == 0 && sw2_press_state == 1){     // SWITCH 2  
     led_update();
     play_song_2();
     count = 0;
@@ -35,5 +35,8 @@ void __interrupt_vec(WDT_VECTOR) WDT ()                    // 250 interrupts/sec
     led_update();
     play_song_4();
     count = 0;
+  }
+  else if(sw0_press_state == 1){
+    toy_reset();
   }
 }

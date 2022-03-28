@@ -31,7 +31,7 @@ void red_on(int on)
 
 void green_on(int on)
 {
-  if(on){
+ if(on){
     P1OUT |= LED_GREEN;
   }else 
     P1OUT &= ~LED_GREEN;
@@ -41,7 +41,7 @@ void green_on(int on)
 
 void leds_on(int on)
 {
-  if(on){
+ if(on){
    P1OUT |= LEDS;
   }else 
     P1OUT &= ~LEDS;
@@ -63,3 +63,7 @@ void swap_leds(int on)
     break;
   }
 }
+
+
+
+
