@@ -9,17 +9,14 @@
 #define SW4 BIT3   // Switch 4 is p2.3
 
 // P1DIR
-#define SW0 BIT4 // Switch 0 is p1.3
+#define SW BIT4 // Switch 0 is p1.3
 
 
 #define SWITCHES (SW1 | SW2 | SW3 | SW4)  // All four switches on Port 2
-#define P1SWITCH (SW0)
+#define P1SWITCH (SW0)                    // Switch on Port 1
 
-void p1_switch_init();
-void p2_switch_init();
-
-void p2_switch_interrupt_handler();
-void p1_switch_interrupt_handler();
+void switch_init();
+void switch_interrupt_handler();
 
 extern int sw0_status;
 extern int sw1_status;

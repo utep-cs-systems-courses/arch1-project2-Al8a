@@ -39,4 +39,6 @@ void __interrupt_vec(WDT_VECTOR) WDT ()                    // 250 interrupts/sec
   else if(sw0_press_state == 1){
     toy_reset();
   }
+
+
 }
