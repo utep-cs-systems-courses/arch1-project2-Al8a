@@ -30,8 +30,8 @@ void play_song_1()
 void play_song_2()
 {
   static char curr_note = 0;  
-  int notes[40] = {B2, C3, A2, B2, C3, G3, A3, G3, A3, G3, A3,G3, A2, B2, C3, A2, B2, C3, C3, E3, D3, C3,B2, A2, G2, F3, F3, F3, F3, F3, E3, E3, C3, D3, E3, E3, G3, E3, F3, E3}; 
-  int n = 40;
+  int notes[37] = {G5, D5, E5_FLAT, F5, E5_FLAT, D5, C5, 0, C5, E5_FLAT, G5, F5, E5_FLAT, D5, E5_FLAT, F5, G5, E5_FLAT, C5, 0, C5, 0, 0, 0, F5, A5_FLAT, C6_SHARP, B5_FLAT, A5_FLAT, G5, F5, G5, E5_FLAT, C5, 0, C5, 0}; 
+  int n = 37;
 
   if (curr_note < n){
     buzzer_set_period(notes[curr_note]);
