@@ -188,7 +188,7 @@ void update_state(){
   static char curr_note = 0;
   switch(curr_note){
   case 0:
-    buzzer_set_period(G0);
+    buzzer_set_period(G3);
     leds_on(0);
     curr_note++;
     led_update();
@@ -215,7 +215,7 @@ void update_state(){
     curr_note++;
     break;
   case 4:
-    buzzer_set_period(A0);
+    buzzer_set_period(A6);
     swap_leds(0);
     dim_sequence(); 
     led_update();
@@ -267,7 +267,3 @@ buzzer_set_period(0);
 led_update();
 }
 
-
-
-
-B
